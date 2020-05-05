@@ -24,6 +24,7 @@ set encoding=UTF-8
 set listchars=tab:>.
 set list
 set autoindent
+set smartindent
 set scrolloff=4
 set foldmethod=indent
 set foldlevel=99
@@ -34,6 +35,9 @@ filetype on
 filetype indent on
 filetype plugin on
 filetype plugin indent on
+set expandtab
+set tabstop=4
+set shiftwidth=4
 
 nnoremap <silent> <leader>pi  :<C-u>source $MYVIMRC<cr>:PlugInstall<cr>
 
