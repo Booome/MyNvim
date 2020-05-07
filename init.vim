@@ -77,6 +77,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
+nnoremap <silent> <leader>gc  :<C-u>e $MYVIMRC<cr>
 nnoremap <silent> <leader>pu  :<C-u>source $MYVIMRC<cr>:PlugUpdate<cr>
 nnoremap <silent> <leader>pc  :<C-u>source $MYVIMRC<cr>:PlugClean<cr>
 
@@ -227,7 +228,7 @@ nnoremap <silent> <leader>lp  :<C-u>CocListResume<CR>
 " Resume latest coc list.
 nnoremap <silent> <leader>in  :<C-u>CocInstall
 " Explore
-nnoremap <silent> <leader>ex  :<C-u>CocCommand explorer<CR>
+nnoremap <silent> <leader>fe  :<C-u>CocCommand explorer<CR>
 
 " append result on current expression
 nmap <Leader>ca <Plug>(coc-calc-result-append)
