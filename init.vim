@@ -73,10 +73,6 @@ set foldlevel=99
 set foldenable
 set ignorecase
 set smartcase
-filetype on
-filetype indent on
-filetype plugin on
-filetype plugin indent on
 set expandtab
 set tabstop=4
 set shiftwidth=4
@@ -262,7 +258,9 @@ nmap <leader>0 <Plug>BuffetSwitch(10)
 " =============================================================================
 " {{{ Clap start
 " =============================================================================
+let g:clap_theme = 'material_design_dark'
 nnoremap <silent> <leader>cf  :<C-u>Clap files<CR>
+nnoremap <silent> <leader>cg  :<C-u>Clap grep2<CR>
 " =============================================================================
 " Clap end }}}
 " =============================================================================
