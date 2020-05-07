@@ -1,4 +1,13 @@
+" Install vim-plug if needed
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+" =============================================================================
 call plug#begin('~/.vim/plugged')
+" =============================================================================
 
 Plug 'mhinz/vim-startify'
 Plug 'ryanoasis/vim-devicons'
@@ -26,7 +35,7 @@ Plug 'neoclide/coc-lists', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-markdownlint', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-pyright', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-snippets', {'do': 'yarn install --frozen-lockfile'}
-Plug 'iamcco/coc-svg', {'do': 'yarn install --frozen-lockfile'}
+Plug 'iamcco/coc-svg', {'do': 'yarn install --frozen-lockfile && yarn build'}
 Plug 'neoclide/coc-tabnine', {'do': 'yarn install --frozen-lockfile'}
 Plug 'voldikss/coc-tasks', {'do': 'yarn install --frozen-lockfile'}
 Plug 'voldikss/coc-template', {'do': 'yarn install --frozen-lockfile'}
@@ -34,7 +43,7 @@ Plug 'fannheyward/coc-texlab', {'do': 'yarn install --frozen-lockfile'}
 Plug 'voldikss/coc-todolist', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
-Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile'}
+Plug 'iamcco/coc-vimlsp', {'do': 'yarn install --frozen-lockfile && yarn build'}
 Plug 'fannheyward/coc-xml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yank', {'do': 'yarn install --frozen-lockfile'}
@@ -44,7 +53,9 @@ Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary!' }
 Plug 'liuchengxu/vim-clap', { 'do': has('win32') ? 'cargo build --release' : 'make' }
 
+" =============================================================================
 call plug#end()
+" =============================================================================
 
 set number
 set relativenumber
