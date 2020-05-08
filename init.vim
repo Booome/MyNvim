@@ -225,9 +225,11 @@ nnoremap <silent> <leader>lk  :<C-u>CocPrev<CR>
 nnoremap <silent> <leader>lp  :<C-u>CocListResume<CR>
 " Resume latest coc list.
 nnoremap <silent> <leader>ls  :<C-u>CocList --auto-preview --interactive symbols<CR>
+nnoremap <silent> <leader>lS  viwy:<C-u>CocList --auto-preview --interactive symbols<CR>:sleep 100ms<CR><C-r>0
 xnoremap <silent> <leader>ls  y:<C-u>CocList --auto-preview --interactive symbols<CR>:sleep 100ms<CR><C-r>0
 " Find symbol of current document.
 nnoremap <silent> <leader>lo  :<C-u>CocList --auto-preview outline<cr>
+nnoremap <silent> <leader>lO  viwy:<C-u>CocList --auto-preview outline<cr>:sleep 100ms<CR><C-r>0
 xnoremap <silent> <leader>lo  y:<C-u>CocList --auto-preview outline<cr>:sleep 100ms<CR><C-r>0
 
 " Resume latest coc list.
@@ -271,12 +273,15 @@ nmap <silent> <leader>0 <Plug>BuffetSwitch(10)
 " =============================================================================
 let g:clap_theme = 'material_design_dark'
 nnoremap <silent> <leader>cf  :<C-u>Clap files<CR>
+nnoremap <silent> <leader>cF  viwy:<C-u>Clap files<CR><C-r>0
 xnoremap <silent> <leader>cf  y:<C-u>Clap files<CR><C-r>0
 
 nnoremap <silent> <leader>cr  :<C-u>Clap grep<CR>
+nnoremap <silent> <leader>cR  viwy:<C-u>Clap grep<CR><C-r>0
 xnoremap <silent> <leader>cr  y:<C-u>Clap grep<CR><C-r>0
 
 nnoremap <silent> <leader>cm  :<C-u>Clap grep2<CR>
+nnoremap <silent> <leader>cM  viwy:<C-u>Clap grep2<CR><C-r>0
 xnoremap <silent> <leader>cm  y:<C-u>Clap grep2<CR><C-r>0
 " =============================================================================
 " Clap end }}}
