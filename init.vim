@@ -224,6 +224,9 @@ nnoremap <silent> <leaer>lj  :<C-u>CocNext<CR>
 nnoremap <silent> <leader>lk  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <leader>lp  :<C-u>CocListResume<CR>
+" Resume latest coc list.
+nnoremap <silent> <leader>ls  :<C-u>CocList symbols<CR>
+xnoremap <silent> <leader>ls  y:<C-u>CocList symbols<CR>:sleep 100ms<CR><C-r>0
 
 " Resume latest coc list.
 nnoremap <silent> <leader>in  :<C-u>CocInstall
@@ -261,7 +264,13 @@ nmap <leader>0 <Plug>BuffetSwitch(10)
 " =============================================================================
 let g:clap_theme = 'material_design_dark'
 nnoremap <silent> <leader>cf  :<C-u>Clap files<CR>
-nnoremap <silent> <leader>cg  :<C-u>Clap grep2<CR>
+xnoremap <silent> <leader>cf  y:<C-u>Clap files<CR><C-r>0
+
+nnoremap <silent> <leader>cr  :<C-u>Clap grep<CR>
+xnoremap <silent> <leader>cr  y:<C-u>Clap grep<CR><C-r>0
+
+nnoremap <silent> <leader>cm  :<C-u>Clap grep2<CR>
+xnoremap <silent> <leader>cm  y:<C-u>Clap grep2<CR><C-r>0
 " =============================================================================
 " Clap end }}}
 " =============================================================================
