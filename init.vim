@@ -78,6 +78,7 @@ set tabstop=4
 set shiftwidth=4
 
 nnoremap <silent> <leader>gc  :<C-u>e $MYVIMRC<cr>
+nnoremap <silent> <leader>sr  :<C-u>source $MYVIMRC<cr>
 nnoremap <silent> <leader>pu  :<C-u>source $MYVIMRC<cr>:PlugUpdate<cr>
 nnoremap <silent> <leader>pc  :<C-u>source $MYVIMRC<cr>:PlugClean<cr>
 
@@ -214,8 +215,6 @@ nnoremap <silent> <leader>la  :<C-u>CocList diagnostics<cr>
 nnoremap <silent> <leader>le  :<C-u>CocList extensions<cr>
 " Show commands.
 nnoremap <silent> <leader>lc  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent> <leader>lo  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent> <leader>ls  :<C-u>CocList -I symbols<cr>
 " Do default action for next item.
@@ -225,8 +224,11 @@ nnoremap <silent> <leader>lk  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent> <leader>lp  :<C-u>CocListResume<CR>
 " Resume latest coc list.
-nnoremap <silent> <leader>ls  :<C-u>CocList symbols<CR>
-xnoremap <silent> <leader>ls  y:<C-u>CocList symbols<CR>:sleep 100ms<CR><C-r>0
+nnoremap <silent> <leader>ls  :<C-u>CocList --auto-preview --interactive symbols<CR>
+xnoremap <silent> <leader>ls  y:<C-u>CocList --auto-preview --interactive symbols<CR>:sleep 100ms<CR><C-r>0
+" Find symbol of current document.
+nnoremap <silent> <leader>lo  :<C-u>CocList --auto-preview outline<cr>
+xnoremap <silent> <leader>lo  y:<C-u>CocList --auto-preview outline<cr>:sleep 100ms<CR><C-r>0
 
 " Resume latest coc list.
 nnoremap <silent> <leader>in  :<C-u>CocInstall
@@ -234,9 +236,14 @@ nnoremap <silent> <leader>in  :<C-u>CocInstall
 nnoremap <silent> <leader>fe  :<C-u>CocCommand explorer<CR>
 
 " append result on current expression
-nmap <Leader>ca <Plug>(coc-calc-result-append)
+nmap <silent> <Leader>ca <Plug>(coc-calc-result-append)
 " replace result on current expression
-nmap <Leader>cr <Plug>(coc-calc-result-replace)
+nmap <silent> <Leader>cr <Plug>(coc-calc-result-replace)
+
+nmap <silent> <Leader>bt <Plug>(coc-bookmark-toggle)
+nmap <silent> <Leader>ba <Plug>(coc-bookmark-annotate)
+nmap <silent> <Leader>lb :<C-u>CocList --auto-preview bookmark<CR>
+
 " =============================================================================
 " Coc end }}}
 " =============================================================================
@@ -245,16 +252,16 @@ nmap <Leader>cr <Plug>(coc-calc-result-replace)
 " =============================================================================
 " {{{ vim-buffet start
 " =============================================================================
-nmap <leader>1 <Plug>BuffetSwitch(1)
-nmap <leader>2 <Plug>BuffetSwitch(2)
-nmap <leader>3 <Plug>BuffetSwitch(3)
-nmap <leader>4 <Plug>BuffetSwitch(4)
-nmap <leader>5 <Plug>BuffetSwitch(5)
-nmap <leader>6 <Plug>BuffetSwitch(6)
-nmap <leader>7 <Plug>BuffetSwitch(7)
-nmap <leader>8 <Plug>BuffetSwitch(8)
-nmap <leader>9 <Plug>BuffetSwitch(9)
-nmap <leader>0 <Plug>BuffetSwitch(10)
+nmap <silent> <leader>1 <Plug>BuffetSwitch(1)
+nmap <silent> <leader>2 <Plug>BuffetSwitch(2)
+nmap <silent> <leader>3 <Plug>BuffetSwitch(3)
+nmap <silent> <leader>4 <Plug>BuffetSwitch(4)
+nmap <silent> <leader>5 <Plug>BuffetSwitch(5)
+nmap <silent> <leader>6 <Plug>BuffetSwitch(6)
+nmap <silent> <leader>7 <Plug>BuffetSwitch(7)
+nmap <silent> <leader>8 <Plug>BuffetSwitch(8)
+nmap <silent> <leader>9 <Plug>BuffetSwitch(9)
+nmap <silent> <leader>0 <Plug>BuffetSwitch(10)
 " =============================================================================
 " vim-buffet end }}}
 " =============================================================================
