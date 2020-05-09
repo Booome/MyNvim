@@ -82,6 +82,9 @@ nnoremap <silent> <leader>sr  :<C-u>source $MYVIMRC<cr>
 nnoremap <silent> <leader>pu  :<C-u>source $MYVIMRC<cr>:PlugUpdate<cr>
 nnoremap <silent> <leader>pc  :<C-u>source $MYVIMRC<cr>:PlugClean<cr>
 
+autocmd filetype makefile setlocal noexpandtab
+autocmd filetype c,cpp setlocal tabstop=2 shiftwidth=2
+
 " =============================================================================
 " {{{ Coc start
 " =============================================================================
