@@ -274,17 +274,18 @@ nmap <silent> <leader>0 <Plug>BuffetSwitch(10)
 " =============================================================================
 " {{{ Clap start
 " =============================================================================
-let g:clap_theme = 'material_design_dark'
-nnoremap <silent> <C-p>  :<C-u>Clap files<CR>
-xnoremap <silent> <C-p>  y:<C-u>Clap files<CR><C-r>0
+let g:clap_theme='material_design_dark'
+let g:clap_provider_grep_opts = '-H --no-heading --vimgrep --smart-case --no-ignore'
+nnoremap <silent> <C-p>  :<C-u>Clap files ++finder=fd -I<CR>
+xnoremap <silent> <C-p>  y:<C-u>Clap files ++finder=fd -I<CR><C-r>0
 
 nnoremap <silent> <leader>cR  :<C-u>Clap grep<CR>
-nnoremap <silent> <leader>cr  viwy:<C-u>Clap grep<CR><C-r>0
-xnoremap <silent> <leader>cr  y:<C-u>Clap grep<CR><C-r>0
+nnoremap <silent> <leader>cr  :<C-u>Clap grep ++query=<cword><CR>
+xnoremap <silent> <leader>cr  :<C-u>Clap grep ++query=@visual<CR>
 
-nnoremap <silent> <leader>cM  :<C-u>Clap grep2<CR>
-nnoremap <silent> <leader>cm  viwy:<C-u>Clap grep2<CR><C-r>0
-xnoremap <silent> <leader>cm  y:<C-u>Clap grep2<CR><C-r>0
+" nnoremap <silent> <leader>cM  :<C-u>Clap grep2<CR>
+" nnoremap <silent> <leader>cm  viwy:<C-u>Clap grep2<CR><C-r>0
+" xnoremap <silent> <leader>cm  y:<C-u>Clap grep2<CR><C-r>0
 " =============================================================================
 " Clap end }}}
 " =============================================================================
